@@ -1,0 +1,199 @@
+/* ============================================
+   TEMPLATE DESIGNER — Professional Styling
+   ============================================ */
+
+.designer-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+    min-height: calc(100vh - 128px);
+}
+
+/* ---- Sidebar / Tool Panel ---- */
+.designer-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.designer-sidebar .card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-color: var(--border-default);
+}
+
+.field-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field-item {
+    padding: 12px 14px;
+    background: #ffff;
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.field-item:hover {
+    border-color: var(--bg-elevated);
+    background: var(--bg-elevated);
+}
+
+.field-item.selected {
+    border-color:#6b6b6b ;
+    background: var(--bg-elevated);
+
+}
+
+.field-item span {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* ---- Field Controls / Properties Panel ---- */
+.field-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-lg);
+}
+
+.field-controls h4 {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 2px;
+}
+
+.field-controls .input {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+}
+
+.field-controls select {
+    padding: 8px 10px;
+    background: var(--bg-input);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.field-controls select:focus {
+    border-color: var(--primary);
+}
+
+.field-controls .control-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.field-controls .control-row label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    min-width: 60px;
+}
+
+/* ---- Canvas Area ---- */
+.designer-canvas {
+    position: relative;
+    background: var(--bg-card);
+    border: 2px dashed var(--border-default);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.04);
+}
+
+.designer-canvas.has-image {
+    border-style: solid;
+    border-color: var(--border-default);
+    box-shadow: var(--shadow-lg), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.canvas-placeholder {
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.canvas-placeholder p {
+    margin-top: 8px;
+}
+
+/* ---- Template Image ---- */
+.template-image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.template-image-container img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---- Draggable Fields ---- */
+.draggable-field {
+    position: absolute;
+    padding: 4px 8px;
+    border: 1px dashed ;
+    border-radius: 4px;
+    cursor: grab;
+    background: rgba(99, 102, 241, 0.08);
+    user-select: none;
+    white-space: nowrap;
+    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+    z-index: 10;
+}
+
+.draggable-field.dragging {
+    cursor: grabbing;
+    box-shadow: 0 0 20px ;
+    border-color: none;
+    z-index: 100;
+}
+
+.draggable-field:hover,
+.draggable-field.active {
+    box-shadow: 0 0 12px ;
+    border-color: black;
+}
+
+/* ---- Upload Area ---- */
+.upload-area {
+    border: 2px dashed var(--border-default);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.upload-area:hover {
+
+    background: rgb(236, 236, 236);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .designer-container {
+        grid-template-columns: 1fr;
+    }
+}
